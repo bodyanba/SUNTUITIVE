@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SUNTUITIVE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/animate.css">
+    <link rel="stylesheet" href="css/3D.css">
+  </head>
+  <body>
+    
+    <section class="section py-5">
+      <div class="container">
+
+				<div id="i3d">
+          <img src="img/images-3/frame_1.jpg">
+          <div class="img-360">
+            <img src="img/360.png" alt="">
+          </div>
+          <div class="descr-wrapper">
+            <div class="descr-wrap">
+  	          <p>Suntuitive mitigates glare caused by the low morning sun and will automatically return to clear as the sun moves over the building</p>
+              <img src="img/arrows/arrow-east.svg" alt="">
+            </div>
+            <div class="descr-wrap">
+  	          <p>With it's neutral appearance Suntuitive can be combined with combined with conventional glass on the same building in areas that do not receive sunshine, making for a very cost-effective solution</p>
+              <img src="img/arrows/arrow-north.svg" alt="">
+            </div>
+            <div class="descr-wrap">
+  	          <p>Suntuitive is the only Dynamic Glass with built-in intelligence, that only tints the glass where needed and stays clear in areas that are shaded, by trees for example</p>
+              <img src="img/arrows/arrow-west.svg" alt="">
+            </div>
+            <div class="descr-wrap">
+  	          <p>Blocking up to <span>90%</span> of solar energy, Suntuitive allows architects to design large areas of glass without having to worry about prohibitive heat load penalties while maximizing occupant comfort</p>
+              <img src="img/arrows/arrow-south.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="libs/interactive_3d-master/jquery.interactive_3d.min.js"></script>
+    <script>
+    	$(document).ready(function() {
+        var i3d = $("#i3d");
+		    i3d.interactive_3d({
+		      frames: 180,
+          preloadImages: false
+		    });
+        function changeSize() {
+          var width = i3d.width();
+          var fontSize = width/73.41 + "px";
+          i3d.css('font-size', fontSize);
+        };
+        changeSize();
+        $(window).resize( function() {
+          changeSize();
+        });
+		  });
+      // images: 158, 113, 68, 20
+    </script>
+
+  </body>
+</html>

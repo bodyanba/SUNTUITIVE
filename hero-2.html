@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SUNTUITIVE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="libs/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <section class="section section-hero">
+      <div class="cocoen">
+        <img src="img/hero-2.jpg" alt="">
+        <img src="img/hero-suntuitive-2.jpg" alt="">
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" class="scroll-down">
+        <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-width="2">
+          <path d="M1 16.733l6.779 6.802c.522.523 1.491.62 2.166.214.103-.062.196-.134.276-.214L17 16.733"/>
+          <path d="M1 8.733l6.779 6.802c.522.523 1.491.62 2.166.214.103-.062.196-.134.276-.214L17 8.733"/>
+          <path d="M1 .733l6.779 6.802c.522.523 1.491.62 2.166.214.103-.062.196-.134.276-.214L17 .733"/>
+        </g>
+      </svg>
+      <div class="rainbow container-fluid fz-14 medium d-none d-sm-block">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="text-before">CONVENTIONAL GLASS</div>
+        <div class="text-after text-white">SUNTUITIVE DYNAMIC GLASS</div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="libs/cocoen-2.0.5/cocoen.min.js"></script>
+    <script src="libs/Pause-master/jquery.pause.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(document).ready(function () {
+
+        new Cocoen();
+
+        var bg = $(".section-hero img");
+        if (bg) {
+          $(window).on("scroll", function() { 
+            bg.each(function(){
+              $(this).css('transform', "translateY(" + $(window).scrollTop()/3 + "px)");
+            });
+          });
+        };
+
+        $(".scroll-down").on("click", function() {
+          $('html, body').animate({
+            scrollTop: $(".section-hero").height()
+          }, 700);
+        });
+
+        // var width= $(".cocoen-drag").css("left");
+        // if (width.match("px")) {
+        //   width = parseInt(width) / $('.cocoen').width()*100;
+        //   width = Math.round(width);
+        //   width += "%";                     
+        // }
+        // $(".cocoen > div:first-child")
+        //   .animate({width: "90%"}, 10000)
+        //   .animate({width: "10%"}, 20000)
+        //   .animate({width: "50%"}, 10000);
+        // $(".cocoen-drag")
+        //   .animate({left: "90%"}, 10000)
+        //   .animate({left: "10%"}, 20000)
+        //   .animate({left: "50%"}, 10000);
+        // // console.log(width);
+
+        // $(".cocoen").on("mouseover", ".cocoen-drag", function () {
+        //   $(".cocoen > div:first-child").stop();
+        //   $(".cocoen-drag").stop();
+        //   console.log(1)
+        // });
+
+        // function setupBox() {
+        //   var $div = $(".cocoen > div:first-child");
+        //   var $drag = $(".cocoen-drag");
+        //   function phase1() {
+        //     $div.animate({ width: "90%" }, 20000, 'linear', phase2);
+        //   };
+        //   function phase2() {
+        //     $div.animate({ width: "10%" }, 20000, 'linear', phase1);
+        //   };
+        //   function phase3() {
+        //     $drag.animate({ left: "90%" }, 20000, 'linear', phase4);
+        //   };
+        //   function phase4() {
+        //     $drag.animate({ left: "10%" }, 20000, 'linear', phase3);
+        //   };
+        //   function pause() {
+        //     $div.pause();
+        //     $drag.pause();
+        //   };
+        //   function resume() {
+        //     $div.resume();
+        //     $drag.resume();
+        //   };
+        //   $drag.hover(function() {
+        //     pause();
+        //   }, function() {
+        //     resume();
+        //   });
+        //   $(".cocoen > div:first-child, .cocoen-drag").mousedown(function() {
+        //     pause();
+        //   }).mouseup(function() {
+        //     resume();
+        //   });
+        //   phase1();
+        //   phase3();
+        // };
+        // setupBox();
+
+        $(".cocoen-drag").append("<span></span>")
+
+      });
+    </script>
+
+  </body>
+</html>

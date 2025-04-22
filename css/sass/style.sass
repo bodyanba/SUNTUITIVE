@@ -1,0 +1,497 @@
+@import fonts, colors
+
+$transition: all .5s
+$transition-2: 1s
+
+*
+	outline: none !important
+
+html
+	height: 100%
+
+body
+	font-family: "Roboto", sans-serif
+	font-weight: 300
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+
+.underline
+	text-decoration: underline
+
+.fz-35
+	font-size: 35px
+.fz-27
+	font-size: 27px
+.fz-25
+	font-size: 25px
+.fz-14
+	font-size: 14px
+
+.color-gray
+	color: $color-gray
+.color-gray-light
+	color: $color-gray-light
+
+.thin
+	font-weight: 100
+.light
+	font-weight: 300
+.normal
+	font-weight: 400
+.medium
+	font-weight: 500
+
+.section-carousel
+	overflow: hidden
+	min-height: 100vh
+
+.circle-width
+	max-width: 530px
+
+.circle-wrap
+	position: relative
+	z-index: 9
+	padding-top: 100%
+	> .center-img-wrap
+		position: absolute
+		top: 20%
+		bottom: 20%	
+		left: 20%
+		right: 20%
+		z-index: 9
+.circle-container
+	display: block
+	padding: 0
+	margin: 0
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	list-style: none
+	background: url('../img/circle.svg') no-repeat center
+	background-size: cover
+	transition: all 1s
+	.circle-item
+		display: block
+		position: absolute
+		width: 70px
+		height: 70px
+		margin: -35px
+		background-color: #fff
+		border-radius: 50%
+		box-shadow: 0 15px 10px 0 rgba(28, 36, 78, 0.03)
+		cursor: pointer
+		border: 1px solid transparent
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 10px
+		transition: $transition, transform $transition-2
+		&:nth-of-type(1)
+			top: 50%
+			left: 100%
+		&:nth-of-type(2)
+			top: 93.20754716981132%
+			left: 74.90566037735849%
+		&:nth-of-type(3)
+			top: 93.20754716981132%
+			left: 24.90566037735849%
+		&:nth-of-type(4)
+			top: 50%
+			left: 0%
+		&:nth-of-type(5)
+			top: 6.79245283018868%
+			left: 24.90566037735849%
+		&:nth-of-type(6)
+			top: 6.79245283018868%
+			left: 74.90566037735849%
+		svg
+			transition: $transition
+			.g
+				transition: $transition
+		.circle-item-name
+			font-size: 25px
+			line-height: 1.6
+			position: absolute
+			right: 100%
+			left: auto
+			padding: 0 20px
+			transition: $transition
+		&.selected, &.prev, &.next
+			.circle-item-name
+				right: auto
+				left: 100%
+		&:hover
+			width: 80px
+			height: 80px
+			margin: -40px
+			border-color: $color-orange
+		&.selected
+			width: 100px
+			height: 100px
+			margin: -50px
+			border-color: $color-orange
+			svg
+				transform: scale(2)
+				.g
+					fill: $color-orange
+			&:after
+				content: ''
+				display: block
+				width: 254px
+				height: 1px
+				background: linear-gradient(to right, $color-orange, $color-gradient)
+				position: absolute
+				top: 50%
+				left: 100%
+				z-index: -9
+				animation-name: fadeInRight
+				animation-duration: $transition-2
+				animation-fill-mode: both
+			.circle-item-name
+				opacity: 0
+		.circle-item-content
+			display: none
+
+.section-hero
+	position: relative
+	overflow: hidden
+	max-height: 100vh
+	.scroll-down
+		position: absolute
+		bottom: 36px
+		left: 50%
+		margin-left: -9px
+		z-index: 10
+		cursor: pointer
+		path
+			&:nth-child(1)
+				opacity: 1
+				animation: scroll-1 2s infinite
+			&:nth-child(2)
+				opacity: .66
+				animation: scroll-2 2s infinite
+			&:nth-child(3)
+				opacity: .33
+				animation: scroll-3 2s infinite
+
+.cocoen
+	overflow: hidden
+	img
+		max-width: none
+	>
+		img
+			display: block
+			width: 100%
+		div:first-child
+			height: 100%
+			left: 0
+			top: 0
+			overflow: hidden
+			position: absolute
+			width: 55%
+			z-index: 8
+.cocoen-drag
+	background: $color-orange
+	background-clip: content-box
+	bottom: 0
+	top: 0
+	cursor: ew-resize
+	position: absolute
+	margin-left: -10px
+	width: 20px
+	padding: 0 9px
+	left: 55%
+	z-index: 9
+	&:before, &:after 
+		content: ''
+		width: 63px
+		height: 25px
+		position: absolute
+		bottom: 158px
+		background-size: cover
+		pointer-events: none
+		transition: $transition
+	&:before 
+		right: 63px
+		background-image: url(../img/arrow-left.png)
+		animation: pulse-left 2s infinite
+	&:after 
+		left: 71px
+		background-image: url(../img/arrow-right.png)
+		animation: pulse-right 2s infinite
+	span
+		width: 20px
+		height: 20px
+		margin-left: -10px
+		border: 1px solid #fff
+		border-radius: 50%
+		background-color: rgba(255, 255, 255, 0.7)
+		position: absolute
+		left: 50%
+		bottom: 182px
+		&:before, &:after 
+			content: ''
+			position: absolute
+			background-size: cover
+			pointer-events: none
+			transition: $transition
+		&:before 
+			width: 50px
+			height: 62px
+			top: -6px
+			left: -10px
+			background-image: url(../img/hand.png)
+			animation: pulse 1s infinite
+		&:after 
+			width: 234px
+			height: 90px
+			top: 62px
+			left: 29px
+			background-image: url(../img/text.png)
+	&:hover, &:active
+		&:before, &:after, span:before, span:after
+			opacity: 0
+.rainbow
+	position: absolute
+	bottom: 0
+	width: 100%
+	z-index: 10
+	.col 
+		height: 30px
+		opacity: .8
+		&:nth-child(1)
+			background-color: #fffde7
+		&:nth-child(2)
+			background-color: #fff9c4
+		&:nth-child(3)
+			background-color: #fff59d
+		&:nth-child(4)
+			background-color: #ffee58
+		&:nth-child(5)
+			background-color: #fed837
+		&:nth-child(6)
+			background-color: #fbc02d
+		&:nth-child(7)
+			background-color: #f9a825
+		&:nth-child(8)
+			background-color: #f57f17
+		&:nth-child(9)
+			background-color: #ef6c00
+		&:nth-child(10)
+			background-color: #e65100
+	.text-before, .text-after
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+	.text-before
+		left: 20px
+		opacity: .8
+	.text-after
+		right: 20px
+		text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3)
+
+@keyframes pulse-left
+	50%
+		transform: translateX(-10px)
+@keyframes pulse-right
+	50%
+		transform: translateX(10px)
+
+@keyframes scroll-1
+	33%
+		opacity: .33
+	66%
+		opacity: .66
+@keyframes scroll-2
+	33%
+		opacity: .66
+	66%
+		opacity: 1
+@keyframes scroll-3
+	33%
+		opacity: 1
+	66%
+		opacity: .33
+
+#slider
+	height: auto
+	padding: 0 35px
+	background: #fff
+	border-radius: 0
+	border: 0
+	box-shadow: none
+	.noUi-base
+		height: 20px
+	.noUi-handle
+		background: #000
+		background-clip: content-box
+		width: 20px
+		// height: 55px
+		height: 50px
+		// padding: 0 9px
+		padding: 0 8.5px
+		// top: 5px
+		top: 0
+		right: -10px
+		cursor: ew-resize
+		border: 0
+		border-radius: 0
+		box-shadow: none
+		&:before, &:after 
+			display: none
+		.noUi-tooltip
+			border: none
+			padding: 5px 14px
+			opacity: .95
+			font-size: 14px
+			font-weight: bold
+			color: #37475d
+			pointer-events: none
+			&:before 
+				content: ''
+				position: absolute
+				top: 100%
+				left: 50%
+				transform: translateX(-50%)
+				border: 5px solid transparent
+				border-top-color: #fff
+	.noUi-pips
+		color: inherit
+		position: relative
+		padding: 10px 0 19px
+		height: 77px
+	.noUi-marker
+		background: #979797
+		// width: 1px
+		width: 2px
+		height: 11px
+	.noUi-marker-large
+		// height: 31px
+		height: 22px
+		// top: 5px
+		top: 7px
+	.noUi-value
+		// font-size: 10px
+		font-size: 18px
+		font-weight: 500
+		bottom: 26px
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 20px
+		background-image: linear-gradient(to right, rgba(255, 237, 15, 0.95), rgba(255, 36, 36, 0.97) 42%, rgba(255, 154, 0, 0.98) 74%, #2d41ff)
+		box-shadow: 0 4px 6px 0 rgba(117, 64, 238, 0.2)
+	&:after 
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 3
+
+#draggable
+	font-size: 0
+	position: absolute
+	bottom: calc(100% - 30.5px)
+	left: 0
+	right: 0
+	z-index: 9
+	svg 
+		> circle
+			stroke: none
+			fill: url(#pattern)
+			transition: $transition
+			cursor: move
+			transform: translateY(30.5px)
+		> path
+			stroke: #fff
+			stroke-dasharray: 10px
+			transform: translateY(30.5px)
+	.slider-drag
+		position: absolute
+		top: 20%
+		left: 34%
+		width: 61px
+		height: 61px
+		margin: -30.5px
+		border-radius: 50%
+		pointer-events: none
+		z-index: -1
+		&:before, &:after 
+			content: ''
+			position: absolute
+			background-size: cover
+			transition: $transition
+		&:before 
+			left: -92px
+			bottom: calc(100% + 43px)
+			width: 206px
+			height: 96px
+			background-image: url(../img/text-2.png)
+		&:after 
+			left: 100%
+			bottom: calc(100% - 6px)
+			width: 54px
+			height: 75px
+			background-image: url(../img/arrow.svg)
+			box-shadow: 0 2px 4px 0 rgba(140, 140, 140, 0.3), 0 -2px 4px 0 rgba(140, 140, 140, 0.2)
+		&:hover, &:active
+			&:before, &:after
+				opacity: 0
+
+#i3d
+	.descr-wrap
+		position: relative
+		p
+			position: absolute
+			transform: translateY(30px)
+			opacity: 0
+			transition: $transition
+	> img
+		&[src="img/images/frame_41.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_42.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_1.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_2.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_3.jpg"][style*="opacity: 0.97"]
+			~ .descr-wrap p
+				&:nth-child(1)
+					transform: translateY(0)
+					opacity: 1
+		&[src="img/images/frame_19.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_20.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_21.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_22.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_23.jpg"][style*="opacity: 0.97"]
+			~ .descr-wrap p
+				&:nth-child(2)
+					transform: translateY(0)
+					opacity: 1
+		&[src="img/images/frame_9.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_10.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_11.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_12.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_13.jpg"][style*="opacity: 0.97"]
+			~ .descr-wrap p
+				&:nth-child(3)
+					transform: translateY(0)
+					opacity: 1
+		&[src="img/images/frame_29.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_30.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_31.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_32.jpg"][style*="opacity: 0.97"],
+		&[src="img/images/frame_33.jpg"][style*="opacity: 0.97"]
+			~ .descr-wrap p
+				&:nth-child(4)
+					transform: translateY(0)
+					opacity: 1
+
+@import media

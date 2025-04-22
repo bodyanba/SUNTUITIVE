@@ -1,0 +1,89 @@
+@media (min-width: 576px)
+
+@media (min-width: 768px)
+	.circle-content
+		position: relative
+		margin-bottom: 38%
+		.circle-content-title
+			padding-bottom: 50px
+		.circle-content-desc
+			position: absolute
+			top: 100%
+			left: 0
+
+@media (min-width: 992px)
+	.circle-content
+		.circle-content-title
+			padding-bottom: 83px
+			
+@media (min-width: 1200px)
+	.container
+		min-width: 1170px
+
+
+@media (max-width: 1199px)
+
+@media (max-width: 991px)
+	.fz-35
+		font-size: 20px
+	.fz-27
+		font-size: 18px
+	.fz-25
+		font-size: 18px
+
+	.circle-container
+		.circle-item
+			.circle-item-name
+				display: none
+
+@media (max-width: 767px)
+	.circle-width
+		padding: 0 5px 90px
+
+	.circle-container
+		.circle-item
+			&:nth-of-type(1)
+				top: 100%
+				left: 50%
+			&:nth-of-type(2)
+				top: 74.90566037735849%
+				left: 6.79245283018868%
+			&:nth-of-type(3)
+				top: 24.90566037735849%
+				left: 6.79245283018868%
+			&:nth-of-type(4)
+				top: 0%
+				left: 50%
+			&:nth-of-type(5)
+				top: 24.90566037735849%
+				left: 93.20754716981132%
+			&:nth-of-type(6)
+				top: 74.90566037735849%
+				left: 93.20754716981132%
+			&.selected
+				&:after
+					width: 1px
+					height: 40px
+					background: linear-gradient(to bottom, $color-orange, $color-gradient)
+					top: 100%
+					left: 50%
+					animation-name: fadeInUp
+
+@media (max-width: 575px)
+
+@media (max-width: 460px)
+	.circle-container
+		.circle-item
+			width: 50px
+			height: 50px
+			margin: -25px
+			&:hover
+				width: 60px
+				height: 60px
+				margin: -30px
+			&.selected
+				width: 70px
+				height: 70px
+				margin: -35px
+				svg
+					transform: scale(1.2)
